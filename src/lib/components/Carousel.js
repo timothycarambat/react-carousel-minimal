@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import Swipe from 'react-easy-swipe';
 import './styles/index.css';
+
+let carouselCounter = 0
 
 function Carousel({
   data,
@@ -24,6 +26,7 @@ function Carousel({
 }) {
 
   //Initialize States
+  const uid = useMemo(() => carouselCounter++, [])
   const [slide, setSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [change, setChange] = useState(0);
@@ -72,8 +75,8 @@ function Carousel({
 
   //Listens to slide state changes
   useEffect(() => {
-    var slides = document.getElementsByClassName("carousel-item");
-    var dots = document.getElementsByClassName("dot");
+    var slides = document.getElementsByClassName(`carousel-item-${uid}`);
+    var dots = document.getElementsByClassName(`dot-${uid}`);
 
 
     var slideIndex = slide;
@@ -125,7 +128,7 @@ function Carousel({
               data.map((item, index) => {
                 return (
                   <div
-                    className="carousel-item fade"
+                    className={`carousel-item-${uid} fade`}
                     style={{
                       maxWidth: width ? width : "600px",
                       maxHeight: height ? height : "400px"
@@ -178,7 +181,7 @@ function Carousel({
                 {
                   data.map((item, index) => {
                     return (
-                      <span className="dot" key={index} onClick={(e) => { setSlide(index); setChange(!change); }}></span>
+                      <span className={`dot-${uid}`} key={index} onClick={(e) => { setSlide(index); setChange(!change); }}></span>
                     );
                   })
                 }

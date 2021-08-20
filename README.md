@@ -1,15 +1,11 @@
-# React Carousel Minimal
-<p>
- <a href="https://www.travis-ci.com/sahilsaha7773/react-carousel-minimal"><img src="https://travis-ci.com/sahilsaha7773/react-carousel-minimal.svg?branch=master"/></a>
-  <a href="https://badge.fury.io/js/react-carousel-minimal"><img src="https://badge.fury.io/js/react-carousel-minimal.svg" alt="npm version" /></a>
- <img src="https://img.shields.io/npm/dw/react-carousel-minimal"/>
-</p>
-Easy to use, responsive and customizable carousel component for React Projects.
+# React Carousel Minimal (Multiple Carousel Support)
+
+Easy to use, responsive and customizable carousel component for React Projects. Supports multiple carousels on screen at the same time.
 
 ## Installation
-`npm i react-carousel-minimal`
+- add this repo to your package.json directly.
 
-[Demo Link](http://sahilsaha.me/react-carousel-minimal-demo/)
+[Original NPM Demo Link](http://sahilsaha.me/react-carousel-minimal-demo/)
 
 ## Features
   - Responsive
@@ -22,6 +18,7 @@ Easy to use, responsive and customizable carousel component for React Projects.
   - Swipe to go to next slide on touch devices
   - Custom slide background color
   - Thumbnail slide indicators
+  - Supports multiple carousels
 
 ## Usage
 
@@ -121,7 +118,6 @@ export default App;
 <div align="center">
   <img src="https://user-images.githubusercontent.com/35343652/128626830-f2920f94-8ca0-4f10-badc-5ba6bbae5a72.png"/>
 </div>
-
 
 ## Props
 |     Name       |           Value            |    Description |
