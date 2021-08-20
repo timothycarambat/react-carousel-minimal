@@ -44,13 +44,19 @@ function Carousel(_ref) {
     slideBackgroundColor,
     slideImageFit,
     thumbnails,
-    thumbnailWidth
+    thumbnailWidth,
+    onSlideClick
   } = _ref;
   //Initialize States
   const uid = (0, _react.useMemo)(() => carouselCounter++, []);
   const [slide, setSlide] = (0, _react.useState)(0);
   const [isPaused, setIsPaused] = (0, _react.useState)(false);
-  const [change, setChange] = (0, _react.useState)(0); //Function to change slide
+  const [change, setChange] = (0, _react.useState)(0); //handle slide click
+
+  const handleSlideClick = () => {
+    return onSlideClick && onSlideClick();
+  }; //Function to change slide
+
 
   const addSlide = n => {
     if (slide + n >= data.length) setSlide(0);else if (slide + n < 0) setSlide(data.length - 1);else setSlide(slide + n);
@@ -179,7 +185,8 @@ function Carousel(_ref) {
       style: {
         borderRadius: radius,
         objectFit: slideImageFit ? slideImageFit : "cover"
-      }
+      },
+      onClick: handleSlideClick
     }), isPaused && /*#__PURE__*/_react.default.createElement("div", {
       className: "pause-icon pause",
       style: {

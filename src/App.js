@@ -105,6 +105,7 @@ function App() {
               maxWidth: "850px",
               margin: "40px auto",
             }}
+            onSlideClick={() => alert('Clicked!!!')}
           />
         </div>
       </div>

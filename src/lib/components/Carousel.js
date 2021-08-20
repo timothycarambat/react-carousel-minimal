@@ -22,7 +22,8 @@ function Carousel({
   slideBackgroundColor,
   slideImageFit,
   thumbnails,
-  thumbnailWidth
+  thumbnailWidth,
+  onSlideClick,
 }) {
 
   //Initialize States
@@ -30,6 +31,11 @@ function Carousel({
   const [slide, setSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [change, setChange] = useState(0);
+
+  //handle slide click
+  const handleSlideClick = () => {
+    return onSlideClick && onSlideClick()
+  }
 
   //Function to change slide
   const addSlide = (n) => {
@@ -161,6 +167,7 @@ function Carousel({
                       borderRadius: radius,
                       objectFit: slideImageFit ? slideImageFit : "cover",
                     }}
+                      onClick={handleSlideClick}
                     />
                     {isPaused &&
                       <div className="pause-icon pause" style={{

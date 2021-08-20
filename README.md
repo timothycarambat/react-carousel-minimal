@@ -1,6 +1,6 @@
 # React Carousel Minimal (Multiple Carousel Support)
 
-Easy to use, responsive and customizable carousel component for React Projects. Supports multiple carousels on screen at the same time.
+Easy to use, responsive and customizable carousel component for React Projects. Supports multiple carousels on screen at the same time + other features
 
 ## Installation
 - add this repo to your package.json directly.
@@ -19,6 +19,7 @@ Easy to use, responsive and customizable carousel component for React Projects. 
   - Custom slide background color
   - Thumbnail slide indicators
   - Supports multiple carousels
+  - `onSlideClick` to respond to direct image clicks
 
 ## Usage
 
